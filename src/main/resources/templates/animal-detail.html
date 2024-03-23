@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>animal</title>
+</head>
+
+<body>
+	<h1>動物詳細画面</h1>
+	
+	<p th:text="${animalId}"></p>
+	
+	<div th:each="animal : ${animalDetail}">
+		<p th:text="'No：' + ${animal.id}"></p>
+		<p th:text="'英名：' + ${animal.name}"></p>
+		<p th:text="'和名：' + ${animal.japaneseName}"></p>
+		<p th:text="'鳴き声：' + ${animal.cry}"></p>
+	</div>
+	<form action="animal-search" method="push">
+		<button type="submit">トップへ</button>
+	</form>
+</body>
+
+</html>
